@@ -1,1 +1,7 @@
-firebase_account.json
+back/firebase_account.json
+back/go.sum
+back/random_fitness.exe
+
+front/.env
+
+tg_bot/bot_env
