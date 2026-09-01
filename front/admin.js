@@ -161,6 +161,9 @@ async function boot() {
   }
   state.user = user;
 
+  document.getElementById('checking').hidden = true;
+  document.getElementById('app').hidden = false;
+
   await loadAdmin();
 
   el.exSave.addEventListener('click', saveExercise);
