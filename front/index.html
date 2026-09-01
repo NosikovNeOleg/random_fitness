@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <meta name="theme-color" content="#0E1B26" />
+  <title>Random Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand__mark">R</span>
+        <span class="brand__name">RandomFitness</span>
+      </div>
+      <button id="userBtn" class="userbtn" type="button"></button>
+    </header>
+
+    <!-- Экран тренировки -->
+    <main id="viewTrain" class="view">
+      <nav id="cats" class="cats" aria-label="Категории"></nav>
+
+      <section class="stage">
+        <div id="rollCard" class="roll roll--empty">
+          <p class="roll__cat" id="rollCat"></p>
+          <h1 class="roll__name" id="rollName">Готов размяться?</h1>
+          <div class="roll__count">
+            <span class="roll__num" id="rollNum">—</span>
+            <span class="roll__unit" id="rollUnit">повторений случайно</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="doneBtn" class="btn btn--done" type="button" hidden>Записать подход</button>
+        <button id="rollBtn" class="btn btn--roll" type="button">Крутить</button>
+      </div>
+      <p id="trainHint" class="hint"></p>
+    </main>
+
+    <!-- Экран статистики -->
+    <main id="viewStats" class="view" hidden>
+      <div class="totals">
+        <div class="stat"><span class="stat__num" id="stTotalReps">0</span><span class="stat__lbl">повторений</span></div>
+        <div class="stat"><span class="stat__num" id="stSets">0</span><span class="stat__lbl">подходов</span></div>
+        <div class="stat"><span class="stat__num" id="stDays">0</span><span class="stat__lbl">дней в деле</span></div>
+        <div class="stat stat--hot"><span class="stat__num" id="stStreak">0</span><span class="stat__lbl">серия подряд</span></div>
+      </div>
+
+      <h2 class="h2">По упражнениям</h2>
+      <div id="byExercise" class="bars"></div>
+
+      <h2 class="h2">Последние подходы</h2>
+      <ul id="recent" class="recent"></ul>
+    </main>
+
+    <nav class="tabbar">
+      <button id="tabTrain" class="tab tab--active" type="button">Тренировка</button>
+      <button id="tabStats" class="tab" type="button">Статистика</button>
+      <a id="tabAdmin" class="tab" href="admin.html" hidden>Админка</a>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="common.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

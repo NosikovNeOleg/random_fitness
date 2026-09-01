@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <meta name="theme-color" content="#0E1B26" />
+  <title>Вход — Random Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div id="authScreen" class="auth">
+    <div class="auth__box">
+      <div class="brand brand--big">
+        <span class="brand__mark">R</span>
+        <span class="brand__name">RandomFitness</span>
+      </div>
+      <p class="auth__lead">Войдите, чтобы сохранять статистику. Покрутить упражнения можно и без входа.</p>
+
+      <div class="tabs2">
+        <button id="tLogin" class="tab2 tab2--active" type="button">Вход</button>
+        <button id="tReg" class="tab2" type="button">Регистрация</button>
+      </div>
+
+      <form id="authForm" class="auth__form" autocomplete="on">
+        <label class="field">
+          <span>Логин</span>
+          <input id="fUser" name="username" type="text" inputmode="latin" autocapitalize="none" placeholder="например, ironmax" required />
+        </label>
+        <label class="field">
+          <span>Пароль</span>
+          <input id="fPass" name="password" type="password" placeholder="минимум 6 символов" required />
+        </label>
+        <p id="authErr" class="auth__err" hidden></p>
+        <button id="authSubmit" class="btn btn--roll" type="submit">Войти</button>
+      </form>
+
+      <button id="guestBtn" class="linkbtn" type="button">Продолжить как гость →</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="common.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

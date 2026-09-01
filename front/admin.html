@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <meta name="theme-color" content="#0E1B26" />
+  <title>Админка — Random Fitness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand__mark">R</span>
+        <span class="brand__name">RandomFitness</span>
+      </div>
+      <a href="index.html" class="userbtn">← Тренировки</a>
+    </header>
+
+    <main id="viewAdmin" class="view">
+      <h2 class="h2" id="exFormTitle">Новое упражнение</h2>
+      <div class="card">
+        <label class="field">
+          <span>Название</span>
+          <input id="exName" type="text" placeholder="например, Подтягивания узким хватом" />
+        </label>
+        <label class="field">
+          <span>Категория</span>
+          <select id="exCat" class="select"></select>
+        </label>
+        <div class="row3">
+          <label class="field"><span>Мин.</span><input id="exMin" type="number" min="1" inputmode="numeric" placeholder="10" /></label>
+          <label class="field"><span>Макс.</span><input id="exMax" type="number" min="1" inputmode="numeric" placeholder="30" /></label>
+          <label class="field"><span>Единица</span>
+            <select id="exUnit" class="select"><option value="раз">раз</option><option value="сек">сек</option></select>
+          </label>
+        </div>
+        <p id="exErr" class="auth__err" hidden></p>
+        <div class="actions">
+          <button id="exCancel" class="btn btn--ghost" type="button" hidden>Отмена</button>
+          <button id="exSave" class="btn btn--roll" type="button">Добавить упражнение</button>
+        </div>
+      </div>
+
+      <details class="card details">
+        <summary>Новая категория</summary>
+        <div class="row2">
+          <label class="field"><span>slug (латиница)</span><input id="catSlug" type="text" placeholder="mobility" autocapitalize="none" /></label>
+          <label class="field"><span>Название</span><input id="catName" type="text" placeholder="Растяжка" /></label>
+        </div>
+        <p id="catErr" class="auth__err" hidden></p>
+        <button id="catSave" class="btn btn--roll" type="button">Добавить категорию</button>
+      </details>
+
+      <h2 class="h2">Все упражнения</h2>
+      <div id="adminList" class="adminlist"></div>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="common.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
